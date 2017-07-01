@@ -15,7 +15,7 @@ public class ReportCard {
     // mGradesAverage stores the subject average
     private double mGradesAverage;
 
-    public ReportCard (Integer englishGrade, Integer historyGrade, Integer mathGrade ){
+    public ReportCard(Integer englishGrade, Integer historyGrade, Integer mathGrade) {
         mGrades.add(0, englishGrade);
         mGrades.add(1, historyGrade);
         mGrades.add(2, mathGrade);
@@ -26,7 +26,6 @@ public class ReportCard {
     }
 
     // setters (can be added other by the similar way)
-
     // setmEnglishGrade sets the grade for English which is in the zero position in the array
     public void setmEnglishGrade(Integer englishGrade) {
         mGrades.set(0, englishGrade);
@@ -42,8 +41,38 @@ public class ReportCard {
         mGrades.set(1, mathGrade);
     }
 
+    // setmList
+    public void setmList(String list) {
+        mList = list;
+    }
+
+    // setmGradesAverage
+    public void setmGradesAverage(double average) {
+        mGradesAverage = average;
+    }
+
     // getters
-    // getmGrades returns grades
+    // getmEnglishGrade sets the grade for English which is in the zero position in the array
+    public Integer getmEnglishGrade() {
+        return mGrades.get(0);
+    }
+
+    // getmHistoryGrade sets the grade for English which is in the zero position in the array
+    public Integer getmHistoryGrade() {
+        return mGrades.get(1);
+    }
+
+    // getmMathGrade sets the grade for English which is in the zero position in the array
+    public Integer getmMathGrade() {
+        return mGrades.get(2);
+    }
+
+    // getmList
+    public String getmList() {
+        return mList;
+    }
+
+    // getmGrades returns all grades for all subjects
     public String getmGrades() {
         mList = "";
         for (int i = 0; i < mGrades.size(); i++) {
@@ -52,7 +81,7 @@ public class ReportCard {
         return mList;
     }
 
-    // getmGradesAverage returns the average of grades
+    // getmGradesAverage returns the average of all grades of all subjects
     public double getmGradesAverage() {
         for (int i = 0; i < mGrades.size(); i++) {
             int grade = mGrades.get(i);
@@ -64,5 +93,6 @@ public class ReportCard {
     @Override
     public String toString() {
         return "Name: John Doe. " + getmGrades() + "The average: " + getmGradesAverage() + ".";
+        // e.g.: "Name: John Doe. English: 2. History: 2. Math: 2. The average: 2.0."
     }
 }
